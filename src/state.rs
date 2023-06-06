@@ -19,10 +19,7 @@ impl State {
         };
 
         for action in actions {
-            match action.mutate(&mut s) {
-                Ok(_) => continue,
-                Err(e) => return Err(e)
-            }
+            action.mutate(&mut s)?;
         }
 
         Ok(s)

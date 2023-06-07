@@ -18,7 +18,7 @@ pub enum Id {
     StatueOfLiberty,
 }
 
-pub struct Unit {
+struct Unit {
     pub id: Id,
     pub cost: Cost,
     pub effects: Effects,

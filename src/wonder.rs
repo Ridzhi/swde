@@ -1,4 +1,4 @@
-use crate::base::Cost;
+use crate::base::{Cost, Unit as BaseUnit};
 use crate::effect::List as Effects;
 
 pub enum Id {
@@ -22,4 +22,10 @@ pub struct Unit {
     pub id: Id,
     pub cost: Cost,
     pub effects: Effects,
+}
+
+impl BaseUnit for Unit {
+    fn effects(&self) -> &Effects {
+        &self.effects
+    }
 }

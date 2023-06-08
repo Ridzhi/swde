@@ -1,5 +1,10 @@
-use crate::base::{Unit as BaseUnit, Cost, Age};
+use crate::base::{Cost, Age, Unit as BaseUnit};
+use crate::resource::{Id as RId, Map as RMap};
 use crate::effect::List as Effects;
+use std::collections::HashMap;
+use lazy_static::lazy_static;
+
+pub type List = Vec<Id>;
 
 #[derive(Debug, Clone, Copy, Eq, Hash, PartialEq)]
 pub enum Id {
@@ -81,7 +86,8 @@ pub enum Id {
     TacticiansGuild,
 }
 
-enum Group {
+#[derive(Debug)]
+pub enum Group {
     RawMaterials = 1,
     ManufacturedGoods,
     Military,
@@ -91,7 +97,7 @@ enum Group {
     Guild,
 }
 
-struct Unit {
+pub struct Unit {
     pub id: Id,
     pub age: Age,
     pub group: Group,
@@ -103,4 +109,26 @@ impl BaseUnit for Unit {
     fn effects(&self) -> &Effects {
         &self.effects
     }
+}
+
+lazy_static! {
+    pub static ref REGISTRY: HashMap<Id, Unit> = {
+        vec![
+            Unit{
+                id: Id::LumberYard,
+                age: Age::I,
+                group: Group::RawMaterials,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 1),
+                    ]),
+                },
+                effects: vec![],
+            }
+        ]
+        .into_iter()
+        .map(|unit| (unit.id, unit))
+        .collect::<HashMap<_,_>>()
+    };
 }

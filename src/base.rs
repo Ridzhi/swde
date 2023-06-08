@@ -4,14 +4,18 @@ use crate::effect::List as Effects;
 
 pub type Player = String;
 
+#[derive(Debug, Default)]
 pub enum Age {
+    #[default]
     I = 1,
     II,
     III,
 }
 
+#[derive(Debug, Default)]
 pub enum Phase {
     Over = 1,
+    #[default]
     WondersSelection,
     Turn,
     WhoBeginsTheNextAgeSelection,
@@ -23,6 +27,7 @@ pub enum Phase {
     ReturnedBuildingSelection,
 }
 
+#[derive(Debug)]
 pub enum Bonus {
     Resources = 1,
     RawMaterials,
@@ -35,6 +40,7 @@ pub enum Bonus {
     Coin,
 }
 
+#[derive(Debug)]
 pub enum ScientificSymbol {
     Astrology = 1,
     Wheel,
@@ -46,8 +52,8 @@ pub enum ScientificSymbol {
 }
 
 pub struct Cost {
-    coins: u8,
-    resources: RMap,
+    pub coins: u8,
+    pub resources: RMap,
 }
 
 pub trait Unit {

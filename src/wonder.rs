@@ -52,7 +52,192 @@ lazy_static! {
                 effects: vec![
 
                 ]
-            }
+            },
+            Unit{
+                id: Id::CircusMaximus,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Glass, 1),
+                        (RId::Wood, 1),
+                        (RId::Stone, 2),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
+            Unit{
+                id: Id::TheColossus,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Glass, 1),
+                        (RId::Clay, 1),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
+            Unit{
+                id: Id::TheGreatLibrary,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Papyrus, 1),
+                        (RId::Glass, 1),
+                        (RId::Wood, 3),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
+            Unit{
+                id: Id::TheGreatLighthouse,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Papyrus, 2),
+                        (RId::Stone, 1),
+                        (RId::Wood, 1),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
+            Unit{
+                id: Id::TheHangingGardens,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Papyrus, 1),
+                        (RId::Glass, 1),
+                        (RId::Wood, 2),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
+            Unit{
+                id: Id::TheMausoleum,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Papyrus, 1),
+                        (RId::Glass, 2),
+                        (RId::Clay, 2),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
+            Unit{
+                id: Id::Piraeus,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 1),
+                        (RId::Stone, 1),
+                        (RId::Wood, 2),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
+            Unit{
+                id: Id::ThePyramids,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Papyrus, 1),
+                        (RId::Stone, 3),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
+            Unit{
+                id: Id::TheSphinx,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Glass, 2),
+                        (RId::Clay, 1),
+                        (RId::Stone, 1),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
+            Unit{
+                id: Id::TheStatueOfZeus,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Papyrus, 2),
+                        (RId::Clay, 1),
+                        (RId::Wood, 1),
+                        (RId::Stone, 1),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
+            Unit{
+                id: Id::TheTempleOfArtemis,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Papyrus, 1),
+                        (RId::Glass, 1),
+                        (RId::Stone, 1),
+                        (RId::Wood, 1),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
+            Unit{
+                id: Id::Messe,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Glass, 1),
+                        (RId::Papyrus, 1),
+                        (RId::Wood, 1),
+                        (RId::Clay, 1),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
+            Unit{
+                id: Id::StatueOfLiberty,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Glass, 1),
+                        (RId::Papyrus, 1),
+                        (RId::Clay, 1),
+                        (RId::Stone, 1),
+                        (RId::Wood, 1),
+                    ])
+                },
+                effects: vec![
+
+                ]
+            },
         ]
         .into_iter()
         .map(|unit| (unit.id, unit))

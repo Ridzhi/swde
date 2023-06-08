@@ -628,6 +628,273 @@ lazy_static! {
                 },
                 effects: vec![],
             },
+
+            Unit{
+                id: Id::Arsenal,
+                age: Age::III,
+                group: Group::Military,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 3),
+                        (RId::Wood, 2),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Pretorium,
+                age: Age::III,
+                group: Group::Military,
+                cost: Cost{
+                    coins: 8,
+                    resources: RMap::new(),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Academy,
+                age: Age::III,
+                group: Group::Scientific,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Stone, 1),
+                        (RId::Wood, 1),
+                        (RId::Glass, 2),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Study,
+                age: Age::III,
+                group: Group::Scientific,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Wood, 2),
+                        (RId::Glass, 1),
+                        (RId::Papyrus, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::ChamberOfCommerce,
+                age: Age::III,
+                group: Group::Commercial,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Papyrus, 2),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Port,
+                age: Age::III,
+                group: Group::Commercial,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Wood, 1),
+                        (RId::Glass, 1),
+                        (RId::Papyrus, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Armory,
+                age: Age::III,
+                group: Group::Commercial,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Stone, 2),
+                        (RId::Glass, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Palace,
+                age: Age::III,
+                group: Group::Civilian,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 1),
+                        (RId::Stone, 1),
+                        (RId::Wood, 1),
+                        (RId::Glass, 2),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::TownHall,
+                age: Age::III,
+                group: Group::Civilian,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Stone, 3),
+                        (RId::Wood, 2),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Obelisk,
+                age: Age::III,
+                group: Group::Civilian,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Stone, 2),
+                        (RId::Glass, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Fortifications,
+                age: Age::III,
+                group: Group::Military,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Stone, 2),
+                        (RId::Clay, 1),
+                        (RId::Papyrus, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::SiegeWorkshop,
+                age: Age::III,
+                group: Group::Military,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Wood, 3),
+                        (RId::Glass, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Circus,
+                age: Age::III,
+                group: Group::Military,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 2),
+                        (RId::Stone, 2),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::University,
+                age: Age::III,
+                group: Group::Scientific,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 1),
+                        (RId::Glass, 1),
+                        (RId::Papyrus, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Observatory,
+                age: Age::III,
+                group: Group::Scientific,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Stone, 1),
+                        (RId::Papyrus, 2),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Gardens,
+                age: Age::III,
+                group: Group::Civilian,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 2),
+                        (RId::Wood, 2),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Pantheon,
+                age: Age::III,
+                group: Group::Civilian,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 1),
+                        (RId::Wood, 1),
+                        (RId::Papyrus, 2),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Senate,
+                age: Age::III,
+                group: Group::Civilian,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 2),
+                        (RId::Stone, 1),
+                        (RId::Papyrus, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Lighthouse,
+                age: Age::III,
+                group: Group::Commercial,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 2),
+                        (RId::Glass, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::Arena,
+                age: Age::III,
+                group: Group::Commercial,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 1),
+                        (RId::Stone, 1),
+                        (RId::Wood, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
         ]
         .into_iter()
         .map(|unit| (unit.id, unit))

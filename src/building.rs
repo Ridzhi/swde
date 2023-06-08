@@ -895,6 +895,106 @@ lazy_static! {
                 },
                 effects: vec![],
             },
+
+            Unit{
+                id: Id::MerchantsGuild,
+                age: Age::III,
+                group: Group::Guild,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 1),
+                        (RId::Wood, 1),
+                        (RId::Glass, 1),
+                        (RId::Papyrus, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::ShipOwnersGuild,
+                age: Age::III,
+                group: Group::Guild,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 1),
+                        (RId::Stone, 1),
+                        (RId::Glass, 1),
+                        (RId::Papyrus, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::BuildersGuild,
+                age: Age::III,
+                group: Group::Guild,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Stone, 2),
+                        (RId::Clay, 1),
+                        (RId::Wood, 1),
+                        (RId::Glass, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::MagistratesGuild,
+                age: Age::III,
+                group: Group::Guild,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Wood, 2),
+                        (RId::Clay, 1),
+                        (RId::Papyrus, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::ScientistsGuild,
+                age: Age::III,
+                group: Group::Guild,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Clay, 2),
+                        (RId::Wood, 2),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::MoneyLendersGuild,
+                age: Age::III,
+                group: Group::Guild,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Stone, 2),
+                        (RId::Wood, 2),
+                    ]),
+                },
+                effects: vec![],
+            },
+            Unit{
+                id: Id::TacticiansGuild,
+                age: Age::III,
+                group: Group::Guild,
+                cost: Cost{
+                    coins: 0,
+                    resources: RMap::from([
+                        (RId::Stone, 2),
+                        (RId::Clay, 1),
+                        (RId::Papyrus, 1),
+                    ]),
+                },
+                effects: vec![],
+            },
         ]
         .into_iter()
         .map(|unit| (unit.id, unit))

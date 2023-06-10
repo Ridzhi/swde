@@ -22,18 +22,6 @@ pub struct State {
     first_turn: Player,
 }
 
-// impl Default for State {
-//     fn default() -> Self {
-//         Self{
-//             me: Default::default(),
-//             enemy: Default::default(),
-//             age: Age::I,
-//             phase: Phase::WondersSelection,
-//             first_turn: "".to_string(),
-//         }
-//     }
-// }
-
 #[derive(Debug)]
 pub struct City {
     player: Player,

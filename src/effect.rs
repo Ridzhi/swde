@@ -1,5 +1,5 @@
 use crate::state::State;
-use crate::building::{Id as BId, Group as BGroup};
+use crate::building::{Id as BId, List as Buildings, Group as BGroup, REGISTRY as BRegistry};
 
 pub type List = Vec<Box<dyn Effect + Sync>>;
 
@@ -23,6 +23,21 @@ struct DestructBuilding {
 
 impl Effect for DestructBuilding {
     fn apply(&self, s: &mut State) {
-        ()
+        let buildings: Buildings = s.enemy.buildings
+            .iter()
+            .filter(
+                |bid|
+                    BRegistry
+                        .get(bid)
+                        .unwrap().group == self.group
+            )
+            .collect();
+
+        if buildings.len() == 0 {
+            return
+        }
+
+
+        // ()
     }
 }

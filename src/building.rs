@@ -4,7 +4,7 @@ use crate::effect::List as Effects;
 use std::collections::HashMap;
 use lazy_static::lazy_static;
 
-pub type List = Vec<Id>;
+pub type List = Vec<&'static Id>;
 
 #[derive(Debug, Clone, Copy, Eq, Hash, PartialEq)]
 pub enum Id {
@@ -86,7 +86,7 @@ pub enum Id {
     TacticiansGuild,
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub enum Group {
     RawMaterials = 1,
     ManufacturedGoods,

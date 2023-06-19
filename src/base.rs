@@ -51,6 +51,15 @@ pub enum ScientificSymbol {
     Law,
 }
 
+#[derive(Debug)]
+pub enum Victory {
+    Civilian = 1,
+    MilitarySupremacy,
+    ScienceSupremacy,
+    Resign,
+    Timeout,
+}
+
 pub struct Cost {
     pub coins: u8,
     pub resources: RMap,

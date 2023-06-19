@@ -31,13 +31,12 @@ impl Effect for DestructBuilding {
                         .get(bid)
                         .unwrap().group == self.group
             )
+            .map(|bid| *bid)
             .collect();
 
         if buildings.len() == 0 {
             return
         }
-
-
         // ()
     }
 }

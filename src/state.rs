@@ -1,4 +1,4 @@
-use crate::base::{Player, Age, Phase, Bonus, ScientificSymbol};
+use crate::base::{Player, Age, Phase, Bonus, ScientificSymbol, COINS_PER_POINT};
 use crate::resource::{Map as RMap};
 use crate::building::{Id as BId, List as Buildings, Group as BGroup, by_group};
 use crate::wonder::{Id as WId};
@@ -38,8 +38,20 @@ pub struct City {
 impl City {
     pub fn bonus_rate(&self, b: &Bonus) -> u8 {
         match b {
+            Bonus::Resources => self.bonus_rate(&Bonus::RawMaterials) + self.bonus_rate(&Bonus::ManufacturedGoods),
             Bonus::RawMaterials => by_group(&self.buildings, BGroup::RawMaterials).len() as u8,
-            _ => 10
+            Bonus::ManufacturedGoods => by_group(&self.buildings, BGroup::ManufacturedGoods).len() as u8,
+            Bonus::Military => by_group(&self.buildings, BGroup::Military).len() as u8,
+            Bonus::Commercial => by_group(&self.buildings, BGroup::Commercial).len() as u8,
+            Bonus::Civilian => by_group(&self.buildings, BGroup::Civilian).len() as u8,
+            Bonus::Science => by_group(&self.buildings, BGroup::Scientific).len() as u8,
+            Bonus::Wonder => {
+                self.wonders
+                    .iter()
+                    .filter(|(_, bid)| bid.is_some())
+                    .count() as u8
+            }
+            Bonus::Coin => self.coins / COINS_PER_POINT,
         }
     }
 }

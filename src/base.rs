@@ -2,6 +2,8 @@ use crate::resource::Map as RMap;
 use crate::state::State;
 use crate::effect::List as Effects;
 
+pub const COINS_PER_POINT: u8 = 3;
+
 pub type Player = String;
 
 #[derive(Debug, Default)]

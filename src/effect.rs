@@ -2,12 +2,7 @@ use std::ops::Add;
 use crate::base::{Bonus, DiscountContext, ScientificSymbol};
 use crate::resource::{Id as RId, List as Resources};
 use crate::state::State;
-use crate::building::{
-    Id as BId,
-    Group as BGroup,
-    List as Buildings,
-    REGISTRY as BRegistry,
-};
+use crate::building::{Id as BId, Group as BGroup, List as Buildings, REGISTRY as BRegistry, by_group};
 
 pub type List = Vec<&'static Effect>;
 
@@ -41,6 +36,15 @@ impl Effect {
             Self::Coins { count } => s.me.coins += count,
             Self::CoinsFor { count, bonus } =>
                 s.me.coins += s.me.bonus_rate(bonus) * count,
+            Self::DestructBuilding {group} => {
+                let buildings = by_group(&s.enemy.buildings, *group);
+
+                if buildings.is_empty() {
+                    ()
+                }
+
+                // push dialog
+            }
             _ => (),
         }
     }

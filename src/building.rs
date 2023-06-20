@@ -119,7 +119,7 @@ pub enum Id {
     TacticiansGuild,
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub enum Group {
     RawMaterials = 1,
     ManufacturedGoods,

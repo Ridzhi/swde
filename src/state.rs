@@ -1,6 +1,6 @@
 use crate::base::{Player, Age, Phase, Bonus, ScientificSymbol};
 use crate::resource::{Map as RMap};
-use crate::building::{Id as BId, List as Buildings};
+use crate::building::{Id as BId, List as Buildings, Group as BGroup, by_group};
 use crate::wonder::{Id as WId};
 use crate::token::{Id as TId, List as Tokens};
 
@@ -33,6 +33,15 @@ pub struct City {
     pub tokens: Tokens,
     pub symbols: Symbols,
     pub chains: Buildings,
+}
+
+impl City {
+    pub fn bonus_rate(&self, b: &Bonus) -> u8 {
+        match b {
+            Bonus::RawMaterials => by_group(&self.buildings, BGroup::RawMaterials).len() as u8,
+            _ => 10
+        }
+    }
 }
 
 impl Default for City {

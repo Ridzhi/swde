@@ -5,6 +5,39 @@ use std::collections::HashMap;
 use lazy_static::lazy_static;
 
 pub type List = Vec<&'static Id>;
+// pub type CustList = Vec<&'static Id>;
+
+struct CustList {
+    data: List,
+}
+
+pub fn by_group(source: &List, g: Group) -> List {
+    source
+        .iter()
+        .filter(
+            |bid|
+                REGISTRY
+                    .get(bid)
+                    .unwrap().group == g
+        )
+        .map(|bid| *bid)
+        .collect()
+}
+
+impl CustList {
+    fn by_group(&self, g: Group) -> List {
+        self.data
+            .iter()
+            .filter(
+                |bid|
+                    REGISTRY
+                        .get(bid)
+                        .unwrap().group == g
+            )
+            .map(|bid| *bid)
+            .collect()
+    }
+}
 
 #[derive(Debug, Clone, Copy, Eq, Hash, PartialEq)]
 pub enum Id {

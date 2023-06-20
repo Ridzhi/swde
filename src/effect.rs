@@ -39,6 +39,8 @@ impl Effect {
         match self {
             Self::Chain { building } => s.me.chains.push(building),
             Self::Coins { count } => s.me.coins += count,
+            Self::CoinsFor { count, bonus } =>
+                s.me.coins += s.me.bonus_rate(bonus) * count,
             _ => (),
         }
     }

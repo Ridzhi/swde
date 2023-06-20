@@ -27,7 +27,7 @@ pub struct City {
     player: Player,
     pub score: Score,
     pub resources: RMap,
-    pub coins: u16,
+    pub coins: u8,
     pub wonders: Wonders,
     pub buildings: Buildings,
     pub tokens: Tokens,

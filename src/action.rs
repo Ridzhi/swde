@@ -53,11 +53,11 @@ impl Mutate for Prepare {
 }
 
 pub struct ConstructBuilding {
-    coins: u16,
+    coins: u8,
 }
 
 impl ConstructBuilding {
-    pub fn new(coins: u16) -> Self {
+    pub fn new(coins: u8) -> Self {
         Self {
             coins,
         }

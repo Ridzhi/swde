@@ -1,3 +1,4 @@
+use std::ops::Add;
 use crate::base::{Bonus, DiscountContext, ScientificSymbol};
 use crate::resource::{Id as RId, List as Resources};
 use crate::state::State;
@@ -37,6 +38,7 @@ impl Effect {
     pub fn apply(&'static self, s: &mut State) {
         match self {
             Self::Chain { building } => s.me.chains.push(building),
+            Self::Coins { count } => s.me.coins += count,
             _ => (),
         }
     }

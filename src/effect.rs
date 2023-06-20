@@ -1,42 +1,77 @@
+use crate::base::{Bonus, DiscountContext, ScientificSymbol};
+use crate::resource::{Id as RId, List as Resources};
 use crate::state::State;
-use crate::building::{Id as BId, List as Buildings, Group as BGroup, REGISTRY as BRegistry};
+use crate::building::{
+    Id as BId,
+    Group as BGroup,
+    List as Buildings,
+    REGISTRY as BRegistry,
+};
 
-pub type List = Vec<Box<dyn Effect + Sync>>;
+pub type List = Vec<&'static Effect>;
 
-pub trait Effect {
-    fn apply(&self, s: &mut State) {
+pub enum Effect {
+    Chain { building: BId },
+    Coins { count: u8 },
+    CoinsFor { count: u8, bonus: Bonus },
+    DestructBuilding { group: BGroup },
+    DiscardRewardAdjuster {},
+    Discounter { context: DiscountContext, resource: Resources, count: u8 },
+    Fine { count: u8 },
+    FixedCost { resources: Resources },
+    Guild { bonus: Bonus, points: u8, coins: u8 },
+    Mathematics {},
+    Military { power: u8, strategy_disabled: bool },
+    PickBoardToken {},
+    PickDiscardedCard {},
+    PickRandomToken {},
+    PickReturnedCards {},
+    PickTopLineCard {},
+    PlayAgain {},
+    Points { count: u8 },
+    Resource { resource: RId, count: u8 },
+    Science { symbol: ScientificSymbol },
+}
+
+impl Effect {
+    pub fn apply(&'static self, s: &mut State) {
+        match self {
+            Self::Chain { building } => s.me.chains.push(building),
+            _ => (),
+        }
+    }
+
+    pub fn discard(&self, _s: &mut State) {
         ()
     }
 
-    fn discard(&self, s: &mut State) {
-        ()
-    }
-
-    fn points(&self, s: &State) -> u8 {
+    pub fn points(&self, _s: &State) -> u8 {
         0
     }
 }
 
-struct DestructBuilding {
-    pub group: BGroup,
-}
 
-impl Effect for DestructBuilding {
-    fn apply(&self, s: &mut State) {
-        let buildings: Buildings = s.enemy.buildings
-            .iter()
-            .filter(
-                |bid|
-                    BRegistry
-                        .get(bid)
-                        .unwrap().group == self.group
-            )
-            .map(|bid| *bid)
-            .collect();
-
-        if buildings.len() == 0 {
-            return
-        }
-        // ()
-    }
-}
+//
+// struct DestructBuilding {
+//     pub group: BGroup,
+// }
+//
+// impl Effect for DestructBuilding {
+//     fn apply(&self, s: &mut State) {
+//         let buildings: Buildings = s.enemy.buildings
+//             .iter()
+//             .filter(
+//                 |bid|
+//                     BRegistry
+//                         .get(bid)
+//                         .unwrap().group == self.group
+//             )
+//             .map(|bid| *bid)
+//             .collect();
+//
+//         if buildings.len() == 0 {
+//             return
+//         }
+//         // ()
+//     }
+// }

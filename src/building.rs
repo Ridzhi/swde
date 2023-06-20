@@ -1,6 +1,6 @@
 use crate::base::{Cost, Age, Unit as BaseUnit};
 use crate::resource::{Id as RId, Map as RMap};
-use crate::effect::List as Effects;
+use crate::effect::{Effect, List as Effects};
 use std::collections::HashMap;
 use lazy_static::lazy_static;
 
@@ -122,7 +122,9 @@ lazy_static! {
                     coins: 0,
                     resources: RMap::new(),
                 },
-                effects: vec![],
+                effects: vec![
+                    &Effect::Chain {building: Id::LoggingCamp}
+                ],
             },
             Unit{
                 id: Id::LoggingCamp,

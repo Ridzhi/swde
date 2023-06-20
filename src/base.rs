@@ -65,6 +65,12 @@ pub struct Cost {
     pub resources: RMap,
 }
 
+pub enum DiscountContext {
+    Global,
+    Civilian,
+    Wonders,
+}
+
 pub trait Unit {
     fn effects(&self) -> &Effects;
 

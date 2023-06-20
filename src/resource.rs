@@ -10,3 +10,5 @@ pub enum Id {
 }
 
 pub type Map = HashMap<Id, u16>;
+
+pub type List = Vec<&'static Id>;
